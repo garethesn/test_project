@@ -1,6 +1,8 @@
 Here's another test file. It contains 1 line.
 File is staged, but not committed.
 I've added lines 2 and 3 while the file was staged but not committed.
+On branch showfiles, I've added some content to the middle of this file.
+I'm going to have to merge this as I flatten the showfiles branch onto the master branch.
 On branch master, I've added a few more lines to this file.
 It's coming along nicely, don't you think.
 I'll add one more line to this file right here, for good luck. Hurrah!
