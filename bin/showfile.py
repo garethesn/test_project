@@ -15,7 +15,7 @@ if( len(sys.argv) < 3 ):
     try:
         filename = sys.argv[1]
     except:
-        filename = 'testfile2.txt'
+        filename = 'testdata/testfile2.txt'
         
 
     # Open the file and print it line by line, with our prepend characters...
