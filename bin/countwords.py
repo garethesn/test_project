@@ -6,7 +6,7 @@ import string
 # import pdb
 
 def PrintUsage():
-    print "Usage: ", sys.argv[0], " <filename>\n"
+	print "Usage: ", sys.argv[0], " <filename>\n"
     return
 
 # Enable debugging...
