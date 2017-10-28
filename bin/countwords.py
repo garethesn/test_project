@@ -6,7 +6,7 @@ import string
 # import pdb
 
 def PrintUsage():
-	print "Usage: ", sys.argv[0], " <filename>\n"
+    print "Usage: ", sys.argv[0], " <filename>\n"
     return
 
 # Enable debugging...
@@ -45,12 +45,12 @@ if( len(sys.argv) < 3 ):
             # Increment the global count of letters...
             count_letters += 1
             # Add to the count of that specific letter...
-            letters[char] += 1
+            letters[char.lower()] += 1
 
 	# Print some useful output...
-    print "There were ", count_letters, "characters in the file ", filename, "\n"
-    for c in string.ascii_letters:
-        print "[", c, "] ==> ", letters[c], ", "
+    print "\nThere were ", count_letters, "characters in the file ", filename, "\n"
+    for c in string.ascii_lowercase:
+        print "[", c, "] ==> ", letters[c]
 else:
     PrintUsage()
     sys.exit()
