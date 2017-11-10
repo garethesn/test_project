@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 
 import sys
-from collections import defaultdict
 import string
-# import pdb
+import pdb
 
 
 def PrintUsage():
-    print "Usage:", sys.argv[0], "<filename>\n"
+    print "Usage: ", sys.argv[0], " <filename>\n"
     return
 
 # Enable debugging...
@@ -36,24 +35,28 @@ if(len(sys.argv) < 3):
 
     # Great success! We've opened the file. Let's count the letters and words
     # in the file...
-    letters = defaultdict(int)
-    count_letters = 0
-    # words = {}
+    word = ''
+    words = {}
     count_words = 0
 
     # Sweep the file letter by letter...
     for line in myfile:
         line = line.strip()
         for char in line:
-            # Increment the global count of letters...
-            count_letters += 1
-            # Add to the count of that specific letter...
-            letters[char.lower()] += 1
+            # pdb.set_trace()
+            if(char in string.punctuation or char in string.whitespace):
+                # Word is complete. File it...
+                count_words += 1
+                words[word] += 1
+                word = ''
+            else:
+                # Add the character to the word and continue...
+                word += char.lower()
 
-    # Print some useful output...
-    print "\nThere were", count_letters, "characters in the file", filename, "\n"
-    for c in string.ascii_lowercase:
-        print "[", c, "] ==> ", letters[c]
+	# Print some useful output...
+    print "\nThere were ", count_words, "words in the file ", filename, "\n"
+    for w in words:
+        print "[", w, "] ==> ", words[w]
 else:
     PrintUsage()
     sys.exit()
