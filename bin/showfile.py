@@ -3,20 +3,23 @@
 import sys
 # import pdb
 
+
 def PrintUsage():
     print "Usage: ", sys.argv[0], " <filename>\n"
     return
 
-# Enable debugging...
-#pdb.set_trace()
 
-if( len(sys.argv) < 3 ):
-    # Read the first arg passed as the filename we'll output, or default to testfile2.txt...
+# Enable debugging...
+# pdb.set_trace()
+
+
+if(len(sys.argv) < 3):
+    # Read the first arg passed as the filename we'll output, or default
+    # to testfile2.txt...
     try:
         filename = sys.argv[1]
     except:
         filename = 'testdata/testfile2.txt'
-        
 
     # Open the file and print it line by line, with our prepend characters...
     try:
@@ -32,8 +35,8 @@ if( len(sys.argv) < 3 ):
 
     # Great success! We've opened the file. Let's print it line by line...
     for line in myfile:
-	    line = line.strip()
-	    print ">> ", line
+        line = line.strip()
+        print ">> ", line
 else:
     PrintUsage()
     sys.exit()

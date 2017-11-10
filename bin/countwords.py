@@ -5,20 +5,22 @@ from collections import defaultdict
 import string
 # import pdb
 
+
 def PrintUsage():
-    print "Usage: ", sys.argv[0], " <filename>\n"
+    print "Usage:", sys.argv[0], "<filename>\n"
     return
 
 # Enable debugging...
-#pdb.set_trace()
+# pdb.set_trace()
 
-if( len(sys.argv) < 3 ):
-    # Read the first arg passed as the filename we'll output, or default to testfile2.txt...
+
+if(len(sys.argv) < 3):
+    # Read the first arg passed as the filename we'll output, or default to
+    # testfile2.txt...
     try:
         filename = sys.argv[1]
     except:
         filename = 'testdata/testfile2.txt'
-
 
     # Open the file and print it line by line, with our prepend characters...
     try:
@@ -32,10 +34,11 @@ if( len(sys.argv) < 3 ):
         PrintUsage()
         sys.exit()
 
-    # Great success! We've opened the file. Let's count the letters and words in the file...
+    # Great success! We've opened the file. Let's count the letters and words
+    # in the file...
     letters = defaultdict(int)
     count_letters = 0
-    #words = {}
+    # words = {}
     count_words = 0
 
     # Sweep the file letter by letter...
@@ -47,8 +50,8 @@ if( len(sys.argv) < 3 ):
             # Add to the count of that specific letter...
             letters[char.lower()] += 1
 
-	# Print some useful output...
-    print "\nThere were ", count_letters, "characters in the file ", filename, "\n"
+    # Print some useful output...
+    print "\nThere were", count_letters, "characters in the file", filename, "\n"
     for c in string.ascii_lowercase:
         print "[", c, "] ==> ", letters[c]
 else:
