@@ -2,7 +2,7 @@
 
 import sys
 import string
-import pdb
+# import pdb
 
 
 def PrintUsage():
@@ -46,14 +46,18 @@ if(len(sys.argv) < 3):
             # pdb.set_trace()
             if(char in string.punctuation or char in string.whitespace):
                 # Word is complete. File it...
-                count_words += 1
-                words[word] += 1
+                if(len(word) > 0):
+                    count_words += 1
+                    if(word in words):
+                        words[word] += 1
+                    else:
+                        words[word] = 1
                 word = ''
             else:
                 # Add the character to the word and continue...
                 word += char.lower()
 
-	# Print some useful output...
+    # Print some useful output...
     print "\nThere were ", count_words, "words in the file ", filename, "\n"
     for w in words:
         print "[", w, "] ==> ", words[w]
