@@ -5,4 +5,6 @@ Note that this will surely contain many interesting things. Many!
 
 ## Important disclaimer
 * It also contains many uninteresting things, like this piss-poor documentation that masquerades as a README.md file.
-* **Note to self:** *Add learning how to write competent documentation in README.md markup/markdown format as an issue.*
+
+## Using this repo
+You should run the `init.sh` command to download useful test data.
