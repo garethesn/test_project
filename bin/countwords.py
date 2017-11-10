@@ -59,8 +59,11 @@ if(len(sys.argv) < 3):
 
     # Print some useful output...
     print "\nThere were ", count_words, "words in the file ", filename, "\n"
-    for w in words:
-        print "[", w, "] ==> ", words[w]
+    # Show the most frequently occurring words first...
+    for key, value in reversed(sorted(words.iteritems(), key=lambda (k, v): (v, k))):
+        print "[", key, "] ==> ", value
+    # for w in words:
+    #    print "[", w, "] ==> ", words[w]
 else:
     PrintUsage()
     sys.exit()
