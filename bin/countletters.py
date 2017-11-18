@@ -19,7 +19,7 @@ if(len(sys.argv) < 3):
     # testfile2.txt...
     try:
         filename = sys.argv[1]
-    except:
+    except Exception as e:
         filename = 'testdata/testfile2.txt'
 
     # Open the file and print it line by line, with our prepend characters...
@@ -30,7 +30,8 @@ if(len(sys.argv) < 3):
         PrintUsage()
         sys.exit()
     except Exception as e:
-        print "Error! Caught exception [", e, "] while trying to execute. Terminating."
+        print "Error! Caught exception [", e,\
+            "] while trying to execute. Terminating."
         PrintUsage()
         sys.exit()
 

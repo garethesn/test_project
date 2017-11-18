@@ -18,7 +18,7 @@ if(len(sys.argv) < 3):
     # testfile2.txt...
     try:
         filename = sys.argv[1]
-    except:
+    except Exception as e:
         filename = 'testdata/testfile2.txt'
 
     # Open the file and print it line by line, with our prepend characters...
@@ -29,7 +29,8 @@ if(len(sys.argv) < 3):
         PrintUsage()
         sys.exit()
     except Exception as e:
-        print "Error! Caught exception [", e, "] while trying to execute. Terminating."
+        print "Error! Caught exception [", e,\
+            "] while trying to execute. Terminating."
         PrintUsage()
         sys.exit()
 
@@ -60,7 +61,8 @@ if(len(sys.argv) < 3):
     # Print some useful output...
     print "\nThere were ", count_words, "words in the file ", filename, "\n"
     # Show the most frequently occurring words first...
-    for key, value in reversed(sorted(words.iteritems(), key=lambda (k, v): (v, k))):
+    for key, value in reversed(
+            sorted(words.iteritems(), key=lambda (k, v): (v, k))):
         print "[", key, "] ==> ", value
     # for w in words:
     #    print "[", w, "] ==> ", words[w]
